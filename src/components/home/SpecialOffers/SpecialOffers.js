@@ -9,46 +9,61 @@ import {
 } from "../../../assets/images/index";
 
 const SpecialOffers = () => {
+  const sanPham = [
+    {
+      _id: "1101",
+      img: spfOne,
+      tenSanPham: "Mũ cho bé trai",
+      gia: "35.00", // Giá sản phẩm
+      mauSac: "Trắng và Đen",
+      badge: true,
+      moTa: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
+    },
+    {
+      _id: "1102",
+      img: spfTwo,
+      tenSanPham: "Bàn trà",
+      gia: "180.00", // Giá sản phẩm
+      mauSac: "Xám",
+      badge: true,
+      moTa: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
+    },
+    {
+      _id: "1103",
+      img: spfThree,
+      tenSanPham: "Tai nghe",
+      gia: "25.00", // Giá sản phẩm
+      mauSac: "Pha trộn",
+      badge: true,
+      moTa: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
+    },
+    {
+      _id: "1104",
+      img: spfFour,
+      tenSanPham: "Kính mát",
+      gia: "220.00", // Giá sản phẩm
+      mauSac: "Đen",
+      badge: true,
+      moTa: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
+    },
+  ];
+
   return (
     <div className="w-full pb-20">
-      <Heading heading="Special Offers" />
+      <Heading heading="Ưu đãi đặc biệt" />
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
-        <Product
-          _id="1101"
-          img={spfOne}
-          productName="Cap for Boys"
-          price="35.00"
-          color="Blank and White"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-        />
-        <Product
-          _id="1102"
-          img={spfTwo}
-          productName="Tea Table"
-          price="180.00"
-          color="Gray"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-        />
-        <Product
-          _id="1103"
-          img={spfThree}
-          productName="Headphones"
-          price="25.00"
-          color="Mixed"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-        />
-        <Product
-          _id="1104"
-          img={spfFour}
-          productName="Sun glasses"
-          price="220.00"
-          color="Black"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-        />
+        {sanPham.map((product) => (
+          <Product
+            key={product._id}
+            _id={product._id}
+            img={product.img}
+            productName={product.tenSanPham}
+            price={product.gia} // Truyền giá vào phần price
+            color={product.mauSac}
+            badge={product.badge}
+            des={product.moTa}
+          />
+        ))}
       </div>
     </div>
   );

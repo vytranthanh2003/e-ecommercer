@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import SpecialOffers from "../../components/home/SpecialOffers/SpecialOffers";
+import UuDaiDacBiet from "../../components/home/SpecialOffers/SpecialOffers";
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 
-const Offer = () => {
-  const [prevLocation] = useState("");
+const UuDai = () => {
+  const [viTriTruoc] = useState("");
 
   return (
     <div className="max-w-container mx-auto">
-      <Breadcrumbs title="Offer" prevLocation={prevLocation} />
+      <Breadcrumbs title="Ưu Đãi" prevLocation={viTriTruoc} />
       <div className="pb-10">
-        <SpecialOffers />
+        <UuDaiDacBiet />
       </div>
     </div>
   );
 };
 
-export default Offer;
+export default UuDai;

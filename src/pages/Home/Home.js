@@ -1,26 +1,26 @@
 import React from "react";
 import Banner from "../../components/Banner/Banner";
 import BannerBottom from "../../components/Banner/BannerBottom";
-import BestSellers from "../../components/home/BestSellers/BestSellers";
-import NewArrivals from "../../components/home/NewArrivals/NewArrivals";
-import Sale from "../../components/home/Sale/Sale";
-import SpecialOffers from "../../components/home/SpecialOffers/SpecialOffers";
-import YearProduct from "../../components/home/YearProduct/YearProduct";
+import SanPhamBanChay from "../../components/home/BestSellers/BestSellers";
+import SanPhamMoi from "../../components/home/NewArrivals/NewArrivals";
+import KhuyenMai from "../../components/home/Sale/Sale";
+import UuDaiDacBiet from "../../components/home/SpecialOffers/SpecialOffers";
+import SanPhamNam from "../../components/home/YearProduct/YearProduct";
 
-const Home = () => {
+const TrangChu = () => {
   return (
     <div className="w-full mx-auto">
       <Banner />
       <BannerBottom />
       <div className="max-w-container mx-auto px-4">
-        <Sale />
-        <NewArrivals />
-        <BestSellers />
-        <YearProduct />
-        <SpecialOffers />
+        <KhuyenMai />
+        <SanPhamMoi />
+        <SanPhamBanChay />
+        <SanPhamNam />
+        <UuDaiDacBiet />
       </div>
     </div>
   );
 };
 
-export default Home;
+export default TrangChu;

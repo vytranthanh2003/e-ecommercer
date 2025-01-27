@@ -2,93 +2,93 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 
-const Contact = () => {
+const LienHe = () => {
   const location = useLocation();
-  const [prevLocation, setPrevLocation] = useState("");
+  const [viTriTruocDo, setViTriTruocDo] = useState("");
   useEffect(() => {
-    setPrevLocation(location.state.data);
+    setViTriTruocDo(location.state.data);
   }, [location]);
 
-  const [clientName, setclientName] = useState("");
+  const [tenKhachHang, setTenKhachHang] = useState("");
   const [email, setEmail] = useState("");
-  const [messages, setMessages] = useState("");
+  const [tinNhan, setTinNhan] = useState("");
 
-  // ========== Error Messages Start here ============
-  const [errClientName, setErrClientName] = useState("");
-  const [errEmail, setErrEmail] = useState("");
-  const [errMessages, setErrMessages] = useState("");
-  // ========== Error Messages End here ==============
-  const [successMsg, setSuccessMsg] = useState("");
+  // ========== Thông báo lỗi bắt đầu ở đây ============
+  const [loiTenKhachHang, setLoiTenKhachHang] = useState("");
+  const [loiEmail, setLoiEmail] = useState("");
+  const [loiTinNhan, setLoiTinNhan] = useState("");
+  // ========== Thông báo lỗi kết thúc ở đây ===========
+  const [thongBaoThanhCong, setThongBaoThanhCong] = useState("");
 
-  const handleName = (e) => {
-    setclientName(e.target.value);
-    setErrClientName("");
+  const xuLyTen = (e) => {
+    setTenKhachHang(e.target.value);
+    setLoiTenKhachHang("");
   };
-  const handleEmail = (e) => {
+  const xuLyEmail = (e) => {
     setEmail(e.target.value);
-    setErrEmail("");
+    setLoiEmail("");
   };
-  const handleMessages = (e) => {
-    setMessages(e.target.value);
-    setErrMessages("");
+  const xuLyTinNhan = (e) => {
+    setTinNhan(e.target.value);
+    setLoiTinNhan("");
   };
 
-  // ================= Email Validation start here =============
-  const EmailValidation = (email) => {
+  // ================= Xác thực Email bắt đầu ở đây =============
+  const XacThucEmail = (email) => {
     return String(email)
       .toLowerCase()
       .match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
   };
-  // ================= Email Validation End here ===============
+  // ================= Xác thực Email kết thúc ở đây =============
 
-  const handlePost = (e) => {
+  const xuLyGui = (e) => {
     e.preventDefault();
-    if (!clientName) {
-      setErrClientName("Enter your Name");
+    if (!tenKhachHang) {
+      setLoiTenKhachHang("Vui lòng nhập tên của bạn");
     }
     if (!email) {
-      setErrEmail("Enter your Email");
+      setLoiEmail("Vui lòng nhập email của bạn");
     } else {
-      if (!EmailValidation(email)) {
-        setErrEmail("Enter a Valid Email");
+      if (!XacThucEmail(email)) {
+        setLoiEmail("Vui lòng nhập một email hợp lệ");
       }
     }
-    if (!messages) {
-      setErrMessages("Enter your Messages");
+    if (!tinNhan) {
+      setLoiTinNhan("Vui lòng nhập tin nhắn của bạn");
     }
-    if (clientName && email && EmailValidation(email) && messages) {
-      setSuccessMsg(
-        `Thank you dear ${clientName}, Your messages has been received successfully. Futher details will sent to you by your email at ${email}.`
+    if (tenKhachHang && email && XacThucEmail(email) && tinNhan) {
+      setThongBaoThanhCong(
+        `Cảm ơn bạn ${tenKhachHang}, tin nhắn của bạn đã được gửi thành công. Thông tin chi tiết sẽ được gửi đến email của bạn tại ${email}.`
       );
     }
   };
 
   return (
     <div className="max-w-container mx-auto px-4">
-      <Breadcrumbs title="Contact" prevLocation={prevLocation} />
-      {successMsg ? (
-        <p className="pb-20 w-96 font-medium text-green-500">{successMsg}</p>
+      <Breadcrumbs title="Liên Hệ" prevLocation={viTriTruocDo} />
+      {thongBaoThanhCong ? (
+        <p className="pb-20 w-96 font-medium text-green-500">{thongBaoThanhCong}</p>
       ) : (
         <form className="pb-20">
           <h1 className="font-titleFont font-semibold text-3xl">
-            Fill up a Form
+            Điền vào biểu mẫu
           </h1>
           <div className="w-[500px] h-auto py-6 flex flex-col gap-6">
             <div>
               <p className="text-base font-titleFont font-semibold px-2">
-                Name
+                Tên
               </p>
               <input
-                onChange={handleName}
-                value={clientName}
+                onChange={xuLyTen}
+                value={tenKhachHang}
                 className="w-full py-1 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-sm outline-none focus-within:border-primeColor"
                 type="text"
-                placeholder="Enter your name here"
+                placeholder="Nhập tên của bạn"
               />
-              {errClientName && (
+              {loiTenKhachHang && (
                 <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
                   <span className="text-sm italic font-bold">!</span>
-                  {errClientName}
+                  {loiTenKhachHang}
                 </p>
               )}
             </div>
@@ -97,44 +97,44 @@ const Contact = () => {
                 Email
               </p>
               <input
-                onChange={handleEmail}
+                onChange={xuLyEmail}
                 value={email}
                 className="w-full py-1 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-sm outline-none focus-within:border-primeColor"
                 type="email"
-                placeholder="Enter your name here"
+                placeholder="Nhập email của bạn"
               />
-              {errEmail && (
+              {loiEmail && (
                 <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
                   <span className="text-sm italic font-bold">!</span>
-                  {errEmail}
+                  {loiEmail}
                 </p>
               )}
             </div>
             <div>
               <p className="text-base font-titleFont font-semibold px-2">
-                Messages
+                Tin nhắn
               </p>
               <textarea
-                onChange={handleMessages}
-                value={messages}
+                onChange={xuLyTinNhan}
+                value={tinNhan}
                 cols="30"
                 rows="3"
                 className="w-full py-1 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-sm outline-none focus-within:border-primeColor resize-none"
                 type="text"
-                placeholder="Enter your name here"
+                placeholder="Nhập tin nhắn của bạn"
               ></textarea>
-              {errMessages && (
+              {loiTinNhan && (
                 <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
                   <span className="text-sm italic font-bold">!</span>
-                  {errMessages}
+                  {loiTinNhan}
                 </p>
               )}
             </div>
             <button
-              onClick={handlePost}
+              onClick={xuLyGui}
               className="w-44 bg-primeColor text-gray-200 h-10 font-titleFont text-base tracking-wide font-semibold hover:bg-black hover:text-white duration-200"
             >
-              Post
+              Gửi
             </button>
           </div>
         </form>
@@ -143,4 +143,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default LienHe;

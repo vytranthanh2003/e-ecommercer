@@ -4,10 +4,12 @@ import { RiShoppingCart2Fill } from "react-icons/ri";
 import { MdSwitchAccount } from "react-icons/md";
 import { useSelector } from "react-redux";
 
-const SpecialCase = () => {
-  const products = useSelector((state) => state.orebiReducer.products);
+const TruongHopDacBiet = () => {
+  const sanPham = useSelector((state) => state.orebiReducer.products);
+
   return (
     <div className="fixed top-52 right-2 z-20 hidden md:flex flex-col gap-2">
+      {/* Link đến trang đăng nhập */}
       <Link to="/signin">
         <div className="bg-white w-16 h-[70px] rounded-md flex flex-col gap-1 text-[#33475b] justify-center items-center shadow-testShadow overflow-x-hidden group cursor-pointer">
           <div className="flex justify-center items-center">
@@ -15,9 +17,11 @@ const SpecialCase = () => {
 
             <MdSwitchAccount className="text-2xl -translate-x-3 group-hover:translate-x-12 transition-transform duration-200" />
           </div>
-          <p className="text-xs font-semibold font-titleFont">Profile</p>
+          <p className="text-xs font-semibold font-titleFont">Hồ sơ</p>
         </div>
       </Link>
+
+      {/* Link đến trang giỏ hàng */}
       <Link to="/cart">
         <div className="bg-white w-16 h-[70px] rounded-md flex flex-col gap-1 text-[#33475b] justify-center items-center shadow-testShadow overflow-x-hidden group cursor-pointer relative">
           <div className="flex justify-center items-center">
@@ -25,10 +29,10 @@ const SpecialCase = () => {
 
             <RiShoppingCart2Fill className="text-2xl -translate-x-3 group-hover:translate-x-12 transition-transform duration-200" />
           </div>
-          <p className="text-xs font-semibold font-titleFont">Buy Now</p>
-          {products.length > 0 && (
+          <p className="text-xs font-semibold font-titleFont">Mua ngay</p>
+          {sanPham.length > 0 && (
             <p className="absolute top-1 right-2 bg-primeColor text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-semibold">
-              {products.length}
+              {sanPham.length}
             </p>
           )}
         </div>
@@ -37,4 +41,4 @@ const SpecialCase = () => {
   );
 };
 
-export default SpecialCase;
+export default TruongHopDacBiet;

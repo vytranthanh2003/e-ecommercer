@@ -8,30 +8,30 @@ const Category = () => {
   const items = [
     {
       _id: 990,
-      title: "New Arrivals",
+      title: "HÀNG MỚI NHẬP",
       icons: true,
     },
     {
       _id: 991,
-      title: "Gudgets",
+      title: "THỜI TRANG",
     },
     {
       _id: 992,
-      title: "Accessories",
+      title: "GIÀY DÉP",
       icons: true,
     },
     {
       _id: 993,
-      title: "Electronics",
+      title: "PHỤ KIỆN",
     },
     {
       _id: 994,
-      title: "Others",
+      title: "ĐỒNG HỒ",
     },
   ];
   return (
     <div className="w-full">
-      <NavTitle title="Shop by Category" icons={false} />
+      <NavTitle title="MUA HÀNG THEO DANH MỤC" icons={false} />
       <div>
         <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
           {items.map(({ _id, title, icons }) => (

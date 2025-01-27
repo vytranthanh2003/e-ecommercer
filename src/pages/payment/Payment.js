@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 
-const Payment = () => {
+const ThanhToan = () => {
   return (
     <div className="max-w-container mx-auto px-4">
-      <Breadcrumbs title="Payment gateway" />
+      <Breadcrumbs title="Cổng thanh toán" />
       <div className="pb-10">
-        <p>Payment gateway only applicable for Production build.</p>
+        <p>Cổng thanh toán chỉ áp dụng cho bản dựng Sản xuất.</p>
         <Link to="/">
           <button className="w-52 h-10 bg-primeColor text-white text-lg mt-4 hover:bg-black duration-300">
-            Explore More
+            Khám phá thêm
           </button>
         </Link>
       </div>
@@ -18,4 +18,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default ThanhToan;

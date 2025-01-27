@@ -11,43 +11,43 @@ import {
 const BestSellers = () => {
   return (
     <div className="w-full pb-20">
-      <Heading heading="Our Bestsellers" />
+      <Heading heading="Sản phẩm bán chạy nhất của chúng tôi" />
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
         <Product
           _id="1011"
           img={bestSellerOne}
-          productName="Flower Base"
-          price="35.00"
-          color="Blank and White"
+          productName="Lọ Hoa"
+          price="35.000 VNĐ"
+          color="Đen và Trắng"
           badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          des="Lọ hoa sang trọng với thiết kế tinh tế, phù hợp để trang trí cho mọi không gian trong nhà bạn."
         />
         <Product
           _id="1012"
           img={bestSellerTwo}
-          productName="New Backpack"
-          price="180.00"
-          color="Gray"
+          productName="Balo Mới"
+          price="180.000 VNĐ"
+          color="Xám"
           badge={false}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          des="Balo thời trang, nhẹ, bền bỉ, và tiện lợi cho các chuyến đi học hoặc du lịch."
         />
         <Product
           _id="1013"
           img={bestSellerThree}
-          productName="Household materials"
-          price="25.00"
-          color="Mixed"
+          productName="Vật Dụng Gia Đình"
+          price="25.000 VNĐ"
+          color="Hỗn Hợp"
           badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          des="Bộ sản phẩm gia đình đa năng, tiện lợi và phù hợp cho mọi nhu cầu sử dụng hàng ngày."
         />
         <Product
           _id="1014"
           img={bestSellerFour}
-          productName="Travel Bag"
-          price="220.00"
-          color="Black"
+          productName="Túi Du Lịch"
+          price="220.000 VNĐ"
+          color="Đen"
           badge={false}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          des="Túi du lịch cao cấp, chống thấm nước và thiết kế hiện đại, đáp ứng mọi chuyến đi của bạn."
         />
       </div>
     </div>

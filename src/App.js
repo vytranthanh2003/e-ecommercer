@@ -20,7 +20,9 @@ import Home from "./pages/Home/Home";
 import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
-import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import ProductDetails from './pages/ProductDetails/ProductDetails';
+
+// Sử dụng ProductDetails trong mã của bạn
 import Shop from "./pages/Shop/Shop";
 
 const Layout = () => {

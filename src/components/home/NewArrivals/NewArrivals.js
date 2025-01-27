@@ -25,7 +25,6 @@ const NewArrivals = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: true,
         },
       },
       {
@@ -33,7 +32,6 @@ const NewArrivals = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          infinite: true,
         },
       },
       {
@@ -41,70 +39,76 @@ const NewArrivals = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: true,
         },
       },
     ],
   };
+
+  const products = [
+    {
+      _id: "100001",
+      img: newArrOne,
+      productName: "Đồng hồ bàn tròn",
+      price: "44.00",
+      color: "Đen",
+      badge: true,
+      des: "Đồng hồ để bàn với thiết kế hiện đại, phù hợp cho mọi không gian sống.",
+    },
+    {
+      _id: "100002",
+      img: newArrTwo,
+      productName: "Đồng hồ thông minh",
+      price: "250.00",
+      color: "Đen",
+      badge: true,
+      des: "Đồng hồ thông minh với nhiều tính năng tiện ích, kết nối nhanh chóng.",
+    },
+    {
+      _id: "100003",
+      img: newArrThree,
+      productName: "Giỏ đựng quần áo",
+      price: "80.00",
+      color: "Hỗn hợp",
+      badge: true,
+      des: "Giỏ đựng quần áo đa năng, giúp không gian gọn gàng hơn.",
+    },
+    {
+      _id: "100004",
+      img: newArrFour,
+      productName: "Đồ chơi vui nhộn cho trẻ em",
+      price: "60.00",
+      color: "Hỗn hợp",
+      badge: false,
+      des: "Đồ chơi an toàn và vui nhộn, giúp trẻ phát triển sáng tạo.",
+    },
+    {
+      _id: "100005",
+      img: newArrTwo,
+      productName: "Đồ chơi vui nhộn cho trẻ em",
+      price: "60.00",
+      color: "Hỗn hợp",
+      badge: false,
+      des: "Đồ chơi an toàn và vui nhộn, giúp trẻ phát triển sáng tạo.",
+    },
+  ];
+
   return (
     <div className="w-full pb-16">
-      <Heading heading="New Arrivals" />
+      <Heading heading="Sản phẩm mới" />
       <Slider {...settings}>
-        <div className="px-2">
-          <Product
-            _id="100001"
-            img={newArrOne}
-            productName="Round Table Clock"
-            price="44.00"
-            color="Black"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100002"
-            img={newArrTwo}
-            productName="Smart Watch"
-            price="250.00"
-            color="Black"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100003"
-            img={newArrThree}
-            productName="cloth Basket"
-            price="80.00"
-            color="Mixed"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100004"
-            img={newArrFour}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100005"
-            img={newArrTwo}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
+        {products.map((product) => (
+          <div key={product._id} className="px-2">
+            <Product
+              _id={product._id}
+              img={product.img}
+              productName={product.productName}
+              price={product.price}
+              color={product.color}
+              badge={product.badge}
+              des={product.des}
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   );
